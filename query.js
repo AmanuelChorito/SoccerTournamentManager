@@ -30,12 +30,14 @@ exports.recordresult = function (
   player2id,
   player2score
 ) {
-  let player1point, player2point;
+  console.log(player1id, player1score, player2id, player2score);
+  let player1point;
+  let player2point;
   if (player1score > player2score) {
     player1point = 3;
     player2point = 0;
   } else if (player1score < player2score) {
-    player2pointt = 3;
+    player2point = 3;
     player1point = 0;
   } else {
     player2point = 1;
