@@ -66,4 +66,9 @@ app.post("/recordresult", cors(corsOption), function (req, res) {
     });
 });
 
-app.listen(8089);
+//app.listen(8089);
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
