@@ -11,7 +11,7 @@ const corsOption = {
   origin: "*",
   optionsSuccessStatus: 200,
 };
-app.get("/", function (req, res) {
+app.get("/", cors(corsOption), function (req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
 app.get("/manage", function (req, res) {

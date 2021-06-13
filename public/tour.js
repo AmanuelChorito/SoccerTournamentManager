@@ -32,7 +32,7 @@ $(document).ready(function () {
     let lname = document.getElementById("lastname").value;
 
     let selectedgroup = document.querySelector("#group").value;
-    $.post("http://localhost:8089/addplayer", {
+    $.post("https://tournament-table.herokuapp.com/addplayer", {
       firstname: fname,
       lastname: lname,
       selectedgroup: selectedgroup,
@@ -57,7 +57,7 @@ $(document).ready(function () {
     let player2score = $("#Player2score").val();
     console.log(player1score + " and " + player2score);
 
-    $.post("http://localhost:8089/recordresult", {
+    $.post("https://tournament-table.herokuapp.comrecordresult", {
       player1id: playerid[0],
       player1score: player1score,
       player2id: playerid[1],
