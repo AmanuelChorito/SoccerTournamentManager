@@ -79,7 +79,7 @@ $(document).ready(function () {
 });
 
 function getpage() {
-  $.get("http://localhost:8089/getall")
+  $.get("https://tournament-table.herokuapp.com/getall")
     .done(function (data) {
       loadingform(data);
     })
