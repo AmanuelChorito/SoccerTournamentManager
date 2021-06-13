@@ -1,0 +1,192 @@
+var mysql = require("mysql");
+var conn = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "1234",
+  database: "FIFA",
+});
+// conn.connect(function (err) {
+//   if (err) throw err;
+//   console.log("connected");
+
+//   conn.query("CREATE DATABASE FIFA", function (err, result) {
+//     if (err) throw err;
+//     console.log("Database created");
+//   });
+// });
+//CREATE TABLE
+// var sql =
+//   "CREATE table players(id INT PRIMARY KEY AUTO_INCREMENT,playername VARCHAR(255), goalfor VARCHAR(255), goalagainst VARCHAR(255),points VARCHAR(255))";
+// //player name GF GA GD points group name
+// conn.query(sql, function (err, result) {
+//   if (err) throw err;
+//   console.log("Table created");
+// });
+
+// var sqlnew =
+//   "CREATE table matchstat(player1 VARCHAR(255), player2 VARCHAR(255),player1goal1 VARCHAR(255),  player1goal2 VARCHAR(255))";
+// conn.query(sqlnew, function (err, result) {
+//   if (err) throw err;
+//   console.log("Table created");
+// });
+
+//UPDATE TABLE
+//   var sqlupdate = "ALTER table customers ADD id INT PRIMARY KEY AUTO_INCREMENT";
+//   conn.query(sqlupdate, function (err, result) {
+//     if (err) throw err;
+//     console.log("table updated");
+//   });
+//INSERT INTO
+//   var sql =
+//     "INSERT INTO customers(name, address)  VALUES('Company Inc','Highway 37')";
+//   conn.query(sql, function (err, result) {
+//     if (err) throw err;
+//     console.log("1 record inserted");
+
+//  });
+//INSERT MULTIPLE VALUES FROM ARRAY
+//   var sql = "INSERT INTO customers(name,address) VALUES ?";
+//   let values = [
+//     ["John", "Highway 71"],
+//     ["Peter", "Lowstreet 4"],
+//     ["Amy", "Apple st 652"],
+//     ["Hannah", "Mountain 21"],
+//     ["Michael", "Valley 345"],
+//     ["Sandy", "Ocean blvd 2"],
+//     ["Betty", "Green Grass 1"],
+//     ["Richard", "Sky st 331"],
+//     ["Susan", "One way 98"],
+//     ["Vicky", "Yellow Garden 2"],
+//     ["Ben", "Park Lane 38"],
+//     ["William", "Central st 954"],
+//     ["Chuck", "Main Road 989"],
+//     ["Viola", "Sideway 1633"],
+//   ];
+//   conn.query(sql, [values], function (err, result) {
+//     if (err) throw err;
+//     console.log("number of records inserted:" + result.affectedRows);
+//   });
+//   let sqlp = "INSERT INTO product (name)  VALUES ?";
+//   let values = [["Chocolate Heaven"], ["Tasty Lemons"], ["Vanilla Dreams"]];
+
+//   conn.query(sqlp, [values], function (err, result) {
+//     if (err) throw err;
+//     console.log("number of inserted product" + result.affectedRows);
+//   });
+
+// SELECTING FROM A TABLE
+//   conn.query("SELECT * FROM customers", function (err, result, fields) {
+//     if (err) throw err;
+//     console.log(result);
+//   });
+
+// SELECTING COLUMN
+//   conn.query(
+//     "SELECT name,address FROM customers ",
+//     function (err, result, fields) {
+//       //fields: array containing information about each field in the result.
+//       if (err) throw err;
+//       console.log(result);
+//       console.log(result[14].address);
+//     }
+//   );
+// //fields: array containing information about each field in the result.
+//   conn.query(
+//     "SELECT name,address FROM customers ",
+//     function (err, result, fields) {
+//       if (err) throw err;
+//       console.log(fields);
+//       console.log(fields[1].name);
+//     }
+//   );
+// SELECT WITH A FILTER : WHERE
+
+/*  conn.query(
+    "SELECT * FROM customers WHERE address='park Lane 38'",
+    function (err, result) {
+      if (err) throw err;
+      console.log(result);
+    }
+  ); */
+// ou can also select the records that starts, includes, or ends with a given letter or phrase.
+// use % to represent zero, one or multiple chars
+/* conn.query(
+    "SELECT *  FROM customers WHERE address  LIKE 'S%'",
+    function (err, result) {
+      if (err) throw err;
+      console.log(result);
+    }
+  ); */
+
+/* //Escaping Query values
+  //When query values are variables provided by the user, you should escape the values.
+  //This is to prevent SQL injections, which is a common web hacking technique to destroy or misuse your database.
+  //The MySQL module has methods to escape query values: */
+/* let adr = "Mountain 21";
+  let sql = "SELECT * FROM customers  WHERE address =" + mysql.escape(adr);
+  conn.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  }); */
+
+// multiple placeholder
+// let name = "amy";
+// let adr = "Mountain 21";
+// var sql = "SELECT * FROM customers WHERE name=?";
+// conn.query(sql, name, function (err, result) {
+//   if (err) throw err;
+//   console.log(result);
+// });
+
+// Node js ORDER BY: Sort the result
+/* conn.query(
+    "SELECT * FROM customers ORDER BY name DESC",
+    function (err, result) {
+      console.log(result);
+    }
+  ); */
+//DELETE record DELETE FROM
+/*  let sql = "DELETE FROM customers WHERE  address='Mountain 21'";
+  conn.query(sql, function (err, result) {
+    if (err) throw err;
+    console.log("number of deleted record:" + result.affectedRows);
+  }); */
+//DROP a table
+//DROP TABLE NAME IF EXISTS
+
+//UPDATE TABLE RECORDS
+
+/*  let sqlupdate =
+    "UPDATE customers  SET address= 'Canyon 123' WHERE  address='Valley 345' ";
+  conn.query(sqlupdate, function (err, result) {
+    if (err) throw err;
+    console.log(result.affectedRows + "Records updated");
+  }); */
+
+//LIMITS THE RESULT
+// THE NUumber of records returned from the query
+//start from Another position: if you want to return recors from third records 'OFFSET'
+//other wise onlylimit
+/*  let sqllimit = "SELECT * FROM customers  LIMIT 5 OFFSET 2";
+  conn.query(sqllimit, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  }); */
+
+//start from Another position: if you want to return recors from third records 'OFFSET' short form
+//LIMIT 5 OFFSET 2 ===LIMIT 2, 5
+/* let sqlofffset = "SELECT * FROM customers  LIMIT 2, 5";
+  conn.query(sqlofffset, function (err, result) {
+    if (err) throw err;
+    console.log(result);
+  }); */
+
+//Join two or more tables
+// combine rows from tw or more lements, bsed on a related colmn bn them
+// let join_user_pr =
+//   "SELECT customers.name AS user_name, product.name AS favorite FROM customers JOIN product ON customers.id=product.id ";
+// conn.query(join_user_pr, function (err, result) {
+//   if (err) throw err;
+//   console.log(result);
+// });
+//});
