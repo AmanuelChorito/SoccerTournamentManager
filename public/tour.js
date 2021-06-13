@@ -57,7 +57,7 @@ $(document).ready(function () {
     let player2score = $("#Player2score").val();
     console.log(player1score + " and " + player2score);
 
-    $.post("https://tournament-table.herokuapp.comrecordresult", {
+    $.post("https://tournament-table.herokuapp.com/recordresult", {
       player1id: playerid[0],
       player1score: player1score,
       player2id: playerid[1],
