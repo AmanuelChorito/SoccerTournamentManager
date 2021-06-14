@@ -6,16 +6,13 @@
   border: 1px solid #666666;
   border-spacing: 5px;  cellspacing:poor IE support for  this
 } */
-#ranktable,
-#matchtable {
+#ranktable {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 50%;
 }
-#ranktable,
-#matchtable td,
-#ranktable,
-#matchtable th {
+#ranktable td,
+#ranktable th {
   border: 1px solid #ddd;
   padding: 8px;
 }
@@ -23,33 +20,26 @@
 /* #ranktable tr:nth-child(even) {
   background-color: #f2f2f2;
 } */
-#ranktable,
-#matchtable tr:nth-child(2) {
+#ranktable tr:nth-child(2) {
   background-color: #acf8e1;
 }
-#ranktable,
-#matchtable tr:nth-child(3) {
+#ranktable tr:nth-child(3) {
   background-color: #f1eca3;
 }
-#ranktable,
-#matchtable tr:nth-child(6) {
+#ranktable tr:nth-child(6) {
   background-color: #acf8e1;
 }
-#ranktable,
-#matchtable tr:nth-child(7) {
+#ranktable tr:nth-child(7) {
   background-color: #f1eca3;
 }
-#ranktable,
-#matchtable tr:nth-child(10) {
+#ranktable tr:nth-child(10) {
   background-color: #acf8e1;
 }
-#ranktable,
-#matchtable tr:nth-child(11) {
+#ranktable tr:nth-child(11) {
   background-color: #f1eca3;
 }
 
-#ranktable,
-#matchtable tr:hover {
+#ranktable tr:hover {
   background-color: #ddd;
 }
 

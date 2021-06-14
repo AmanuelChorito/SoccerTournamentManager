@@ -123,11 +123,11 @@ function getpage() {
 function loadingMatchStatForm(data) {
   $(".matchstattable").empty();
   $(".messagediv").empty();
-  let tablesadd = $(`<table id="matchtable"> <tr>
+  let tablesadd = $(`<table id="ranktable"> <tr>
              
                  <th>Player1 Name</th>
                    <th>Player1 Goal</th>
-                   th>Player2 Goal</th>
+                   <th>Player2 Goal</th>
                   <th>Player2 Name</th>
                 
                   
