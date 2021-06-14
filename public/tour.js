@@ -130,7 +130,7 @@ function loadingMatchStatForm(data) {
                    th>Player2 Goal</th>
                   <th>Player2 Name</th>
                 
-                  <
+                  
                      
                       
             </tr>`);
