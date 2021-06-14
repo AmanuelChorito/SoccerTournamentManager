@@ -10,43 +10,26 @@
 
   <body>
     <h1>Building 140 FIFA Tournament-Summer Break</h1>
-    <!--  <fieldset>
-      <legend>Create Players:</legend>
-      <form action="#" autocomplete="off" id="playerform">
-        <label>First Name: </label
-        ><input type="text" name="firstname" id="firstname" />
-        <label>Last Name: </label
-        ><input type="text" name="lastname" id="lastname" />
-        <select name="group" id="group">
-          <option value="Group1">Group1</option>
-          <option value="Group2">Group2</option>
-          <option value="Group3">Group3</option>
-          <option value="Group4">Group4</option>
-        </select>
-        <input type="submit" value="Add Player" id="addplayer" />
-      </form>
-    </fieldset> -->
-    <!--   <fieldset>
-      <legend>Match Record Result</legend>
 
-      <form action="#" autocomplete="off" id="resultform">
-         <label>Player1:</label >-->
-    <!--  <div>
-          <label name="player1result" id="Player1scorelabel"></label
-          ><input type="text" name="Player1score" id="Player1score" />
-        </div>
-        <div>
-          <label>Player2:</label> -->
-    <!--    <label name="player2result" id="Player2scorelabel"></label
-          ><input type="text" name="Player2score" id="Player2score" required />
-        </div>
-        <input type="submit" value="save" id="save" />
-      </form>
-    </fieldset> -->
-    <h2>Standings</h2>
-    <div class="playersdivTable"></div>
+    <div class="tab">
+      openTab
+      <button class="tablinks" onclick="openTab(event, 'Standing')">
+        Standing
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'MatchResults')">
+        Match Results
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'Schedule')">
+        Schedule
+      </button>
+    </div>
+    <div id="Standing" class="playersdivTable tabcontent">
+      <h3>Standings</h3>
+    </div>
     <div class="messagediv"></div>
-
+    <div id="MatchResults" class="tabcontent">
+      <h3>Match Result</h3>
+    </div>
     <div class="schedule">
       <h4>Group Stage: Day 1</h4>
       <ul>
@@ -97,5 +80,27 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="tour.js"></script>
+    <script>
+      function openTab(evt, Name) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(Name).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
   </body>
 </html>
