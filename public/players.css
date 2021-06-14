@@ -67,3 +67,6 @@ legend {
   color: #fff;
   padding: 3px 6px;
 }
+.schedule {
+  display: inline-block;
+}
