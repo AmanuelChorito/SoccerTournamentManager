@@ -51,7 +51,7 @@ $(document).ready(function () {
       });
   });
 
-  $("#save").submit(function (event) {
+  $("form#resultform").submit(function (event) {
     event.preventDefault();
     let player1score = $("#Player1score").val();
     let player2score = $("#Player2score").val();
