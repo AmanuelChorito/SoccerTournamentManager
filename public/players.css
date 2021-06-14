@@ -73,3 +73,10 @@ legend {
 h4 {
   text-align: center;
 }
+ul {
+  display: flex;
+}
+
+li {
+  flex: auto;
+}
