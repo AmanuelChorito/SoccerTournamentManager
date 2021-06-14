@@ -73,10 +73,11 @@ legend {
 h4 {
   text-align: center;
 }
-/* ul {
-  display: flex;
-} */
-
-/* li {
-  flex: auto;
-} */
+ul {
+  background: #eee196;
+  padding: 20px;
+}
+ul li {
+  background: #cce5ff;
+  margin: 5px;
+}
