@@ -51,7 +51,7 @@ $(document).ready(function () {
       });
   });
 
-  $("form#resultform").submit(function (event) {
+  $("#save").submit(function (event) {
     event.preventDefault();
     let player1score = $("#Player1score").val();
     let player2score = $("#Player2score").val();
@@ -77,7 +77,32 @@ $(document).ready(function () {
       });
   });
 });
+ $("#edit").click(function (event) {
+    event.preventDefault();
+    let player1score = $("#Player1score").val();
+    let player2score = $("#Player2score").val();
+    console.log(player1score + " and " + player2score);
 
+    $.post("https://tournament-table.herokuapp.com/updateresult", {
+      player1id: playerid[0],
+      player1score: player1score,
+      player2id: playerid[1],
+      player2score: player2score,
+    })
+      .done(function (data) {
+        $(".messagediv").append(data.message);
+
+        $("form#playerform")[0].reset();
+        setTimeout(() => {
+          getpage();
+        }, 1500);
+        // console.log(data[0]["word"]);
+      })
+      .fail(function (err) {
+        $(".messagediv").append(err);
+      });
+  });
+});
 function getpage() {
   $.get("https://tournament-table.herokuapp.com/getall")
     .done(function (data) {

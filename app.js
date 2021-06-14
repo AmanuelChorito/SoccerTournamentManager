@@ -47,6 +47,7 @@ app.post("/addplayer", cors(corsOption), function (req, res) {
       res.status(404).send(err);
     });
 });
+
 app.post("/recordresult", cors(corsOption), function (req, res) {
   //let numberold = req.body.inputnumberold;
 
@@ -65,7 +66,24 @@ app.post("/recordresult", cors(corsOption), function (req, res) {
       res.status(404).send(err);
     });
 });
+app.post("/updateresult", cors(corsOption), function (req, res) {
+  //let numberold = req.body.inputnumberold;
 
+  let player1id = parseInt(req.body.player1id);
+  let player1score = parseInt(req.body.player1score);
+  let player2id = parseInt(req.body.player2id);
+  let player2score = parseInt(req.body.player2score);
+  //console.log(player1id, player1score);
+  querydb
+    .updateresult(player1id, player1score, player2id, player2score)
+    .then(function (result) {
+      //res.status(200).json(result);
+      res.send(result);
+    })
+    .catch(function (err) {
+      res.status(404).send(err);
+    });
+});
 //app.listen(8089);
 let port = process.env.PORT;
 if (port == null || port == "") {
