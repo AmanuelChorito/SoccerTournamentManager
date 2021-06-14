@@ -93,7 +93,7 @@ function loadingform(data) {
   $(".playersdivTable").empty();
   $(".messagediv").empty();
   let tablesadd = $(`<table id="ranktable"> <tr>
-                // <th>Rank</th>
+             
                  <th>First Name</th>
                   <th>Last Name</th>
                    <th>Goal For</th>
@@ -111,7 +111,7 @@ function loadingform(data) {
     let agst = parseInt(data[i].goalagainst);
     let diff = parseInt(data[i].goalfor) - parseInt(data[i].goalagainst);
     let tradd = $(`<tr class="row${i + 1}">
-    // <td >${i + 1}</td>
+ 
         <td id="row${i + 1}" >${data[i].firstname}</td>
     <td id="row${i + 1}"> ${data[i].lastname} </td>
     <td id="row${i + 1}">${forg}</td>
