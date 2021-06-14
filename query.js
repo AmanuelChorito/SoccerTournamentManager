@@ -88,8 +88,8 @@ exports.updateresult = function (
     player1point = 1;
   }
   console.log("1", player1point, "2", player2point);
-  let player1update = `update players set played=played+1, goalfor=goalfor+${player1score}, goalagainst=goalagainst+${player2score},points=points+${player1point} where id=${player1id}`;
-  let player2update = `update players set played=played+1, goalfor=goalfor+${player2score}, goalagainst=goalagainst+${player1score},points=points+${player2point} where id=${player2id}`;
+  let player1update = `update players set  goalfor=${player1score}, goalagainst=${player2score},points=${player1point} where id=${player1id}`;
+  let player2update = `update players set goalfor=${player2score}, goalagainst=${player1score},points=${player2point} where id=${player2id}`;
   updatePlayersReslult(player1update);
   updatePlayersReslult(player2update);
   let sql = `INSERT INTO matchstat(player1id,
