@@ -96,6 +96,7 @@ function loadingform(data) {
              
                  <th>First Name</th>
                   <th>Last Name</th>
+                  <th>Played</th>
                    <th>Goal For</th>
                     <th>Goal Against</th>
                      <th>Goal Difference</th>
@@ -114,6 +115,7 @@ function loadingform(data) {
  
         <td id="row${i + 1}" >${data[i].firstname}</td>
     <td id="row${i + 1}"> ${data[i].lastname} </td>
+    <td id="row${i + 1}"> ${data[i].played} </td>
     <td id="row${i + 1}">${forg}</td>
     <td id="row${i + 1}">${agst}</td>
     <td id="row${i + 1}">${data[i].goaldifference}</td>
