@@ -31,6 +31,21 @@ app.get("/getall", cors(corsOption), function (req, res) {
       res.status(404).send(err);
     });
 });
+app.get("/matchstat", cors(corsOption), function (req, res) {
+  querydb
+    .listallmatchs()
+    .then(function (result) {
+      if (result.length == 0) {
+        throw "not found";
+        console.log("err");
+      }
+      res.send(result);
+    })
+    .catch(function (err) {
+      res.status(404).send(err);
+    });
+});
+
 app.post("/addplayer", cors(corsOption), function (req, res) {
   //let numberold = req.body.inputnumberold;
   let fname = req.body.firstname;

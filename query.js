@@ -10,6 +10,19 @@ exports.listallplayers = function () {
     });
   });
 };
+exports.listallmatchs = function () {
+  const sql = `select 
+ (select firstname from heroku_082c330c1b339b6.players where player1id= heroku_082c330c1b339b6.players.id) as player1,
+ (select firstname from heroku_082c330c1b339b6.players where player2id=heroku_082c330c1b339b6.players.id) as player2,
+ player1goal, player2goal   from heroku_082c330c1b339b6.matchstat;`;
+  return new Promise(function (resolve, reject) {
+    conn.query(sql, function (err, result) {
+      if (err) throw reject(err);
+      resolve(result);
+    });
+  });
+};
+
 exports.addplayer = function (fname, lname, sgroup) {
   console.log(fname, lname, sgroup);
   //INSERT INTO
