@@ -126,9 +126,11 @@ function loadingMatchStatForm(data) {
   let tablesadd = $(`<table id="matchtable"> <tr>
              
                  <th>Player1 Name</th>
+                   <th>Player1 Goal</th>
+                   th>Player2 Goal</th>
                   <th>Player2 Name</th>
-                  <th>Player1 Goal</th>
-                  <th>Player2 Goal</th>
+                
+                  <
                      
                       
             </tr>`);
