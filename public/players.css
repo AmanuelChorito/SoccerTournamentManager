@@ -134,3 +134,6 @@ ul li {
   border: 1px solid #ccc;
   border-top: none;
 }
+footer {
+  text-align: center;
+}
