@@ -65,9 +65,7 @@ form {
 footer {
   display: inline-block;
 
-  position: fixed;
-  right: 0px;
-  bottom: 0px;
+  margin: auto;
 }
 .shadowbox {
   border: 1px solid rgb(189, 191, 194);
@@ -133,8 +131,4 @@ ul li {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
-}
-footer {
-  display: inline-block;
-  margin: auto;
 }
