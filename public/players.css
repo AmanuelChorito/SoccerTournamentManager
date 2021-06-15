@@ -135,5 +135,6 @@ ul li {
   border-top: none;
 }
 footer {
-  text-align: center;
+  display: inline-block;
+  margin: auto;
 }
