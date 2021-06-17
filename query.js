@@ -11,7 +11,7 @@ exports.listquarterFinal = function () {
   });
 };
 exports.listsemiFinal = function () {
-  const sql = `SELECT firstname FROM players WHERE status='active' and BETWEEN 5 AND 6 ORDER BY groupname, points DESC,(goalfor-goalagainst) DESC`;
+  const sql = `SELECT firstname FROM players WHERE status='active' and played BETWEEN 5 AND 6 ORDER BY groupname, points DESC,(goalfor-goalagainst) DESC`;
   return new Promise(function (resolve, reject) {
     conn.query(sql, function (err, result) {
       if (err) throw reject(err);
