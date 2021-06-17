@@ -19,6 +19,15 @@ exports.listsemiFinal = function () {
     });
   });
 };
+exports.Final = function () {
+  const sql = `SELECT firstname FROM players WHERE status='active' and played=6 ORDER BY groupname, points DESC,(goalfor-goalagainst) DESC`;
+  return new Promise(function (resolve, reject) {
+    conn.query(sql, function (err, result) {
+      if (err) throw reject(err);
+      resolve(result);
+    });
+  });
+};
 
 exports.listallplayers = function () {
   const sql = `SELECT *,(goalfor-goalagainst) as goaldifference FROM players WHERE status='active' ORDER BY groupname, points DESC,(goalfor-goalagainst) DESC`;

@@ -133,6 +133,13 @@ function getpage() {
     .fail(function (data) {
       displayerror(data);
     });
+  $.get("https://tournament-table.herokuapp.com/Final")
+    .done(function (data) {
+      loadingplayedForm(data, "semiFinal");
+    })
+    .fail(function (data) {
+      displayerror(data);
+    });
 }
 
 function loadingMatchStatForm(data) {
