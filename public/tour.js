@@ -183,7 +183,7 @@ function loadingplayedForm(data, tablename) {
     </tr>`);
     tablesadd.append(tradd);
   }
-  $(".quarterFinal").append(tablesadd);
+  $("." + `${tablename}`).append(tablesadd);
 }
 
 function loadingform(data) {
