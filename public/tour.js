@@ -185,7 +185,7 @@ function loadingQuaretFinalForm(data) {
     </tr>`);
     tablesadd.append(tradd);
   }
-  $(".matchstattable").append(tablesadd);
+  $(".quarterFinal").append(tablesadd);
 }
 
 function loadingform(data) {
