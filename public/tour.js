@@ -172,7 +172,7 @@ function loadingQuaretFinalForm(data) {
   for (let i = 0; i < data.length; i++) {
     let tradd = $(`<tr class="row${i + 1}">
  
-        <td id="row${i + 1}" >${data[i].player1}</td>
+        <td id="row${i + 1}" >${data[i].firstname}</td>
     </tr>`);
     tablesadd.append(tradd);
   }
