@@ -121,7 +121,14 @@ function getpage() {
     });
   $.get("https://tournament-table.herokuapp.com/quarterFinal")
     .done(function (data) {
-      loadingQuaretFinalForm(data);
+      loadingplayedForm(data, "quarterFinal");
+    })
+    .fail(function (data) {
+      displayerror(data);
+    });
+  $.get("https://tournament-table.herokuapp.com/semiFinal")
+    .done(function (data) {
+      loadingplayedForm(data, "semiFinal");
     })
     .fail(function (data) {
       displayerror(data);
@@ -161,8 +168,8 @@ function loadingMatchStatForm(data) {
   }
   $(".matchstattable").append(tablesadd);
 }
-function loadingQuaretFinalForm(data) {
-  $(".quarterFinal").empty();
+function loadingplayedForm(data, tablename) {
+  $(".tablename").empty();
   $(".messagediv").empty();
   let tablesadd = $(`<table id="ranktable"> <tr>
              
