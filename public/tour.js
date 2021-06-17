@@ -169,7 +169,7 @@ function loadingMatchStatForm(data) {
   $(".matchstattable").append(tablesadd);
 }
 function loadingplayedForm(data, tablename) {
-  $(`.${tablename}`).empty();
+  $("." + `${tablename}`).empty();
   $(".messagediv").empty();
   let tablesadd = $(`<table id="ranktable"> <tr>
              
