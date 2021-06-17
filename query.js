@@ -2,7 +2,7 @@ const mysql = require("mysql");
 const conn = require("./db_connection");
 const querydb = require("./query");
 exports.listquarterFinal = function () {
-  const sql = `SELECT *,(goalfor-goalagainst) as goaldifference FROM players WHERE status='active' and played>=4 ORDER BY groupname, points DESC,(goalfor-goalagainst) DESC`;
+  const sql = `SELECT firstname FROM players WHERE status='active' and played>=4 ORDER BY groupname, points DESC,(goalfor-goalagainst) DESC`;
   return new Promise(function (resolve, reject) {
     conn.query(sql, function (err, result) {
       if (err) throw reject(err);
