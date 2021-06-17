@@ -119,7 +119,15 @@ function getpage() {
     .fail(function (data) {
       displayerror(data);
     });
+  $.get("https://tournament-table.herokuapp.com/quarterFinal")
+    .done(function (data) {
+      loadingQuaretFinalForm(data);
+    })
+    .fail(function (data) {
+      displayerror(data);
+    });
 }
+
 function loadingMatchStatForm(data) {
   $(".matchstattable").empty();
   $(".messagediv").empty();
@@ -153,6 +161,33 @@ function loadingMatchStatForm(data) {
   }
   $(".matchstattable").append(tablesadd);
 }
+function loadingQuaretFinalForm(data) {
+  $(".quarterFinal").empty();
+  $(".messagediv").empty();
+  let tablesadd = $(`<table id="ranktable"> <tr>
+             
+                 <th>Players' Name</th>
+            </tr>`);
+
+  for (let i = 0; i < data.length; i++) {
+    let forg = parseInt(data[i].goalfor);
+    let agst = parseInt(data[i].goalagainst);
+    let diff = parseInt(data[i].goalfor) - parseInt(data[i].goalagainst);
+    let tradd = $(`<tr class="row${i + 1}">
+ 
+        <td id="row${i + 1}" >${data[i].player1}</td>
+         <td id="row${i + 1}" >${data[i].player1goal}</td>
+        <td id="row${i + 1}"> ${data[i].player2goal} </td>
+       <td id="row${i + 1}"> ${data[i].player2} </td>
+    
+      
+    
+    </tr>`);
+    tablesadd.append(tradd);
+  }
+  $(".matchstattable").append(tablesadd);
+}
+
 function loadingform(data) {
   console.log(data);
 
