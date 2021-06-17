@@ -122,7 +122,6 @@ function getpage() {
   $.get("https://tournament-table.herokuapp.com/quarterFinal")
     .done(function (data) {
       loadingplayedForm(data, "quarterFinal");
-      loadingplayedForm(data, "semiFinal");
     })
     .fail(function (data) {
       displayerror(data);
